@@ -1,87 +1,46 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
+  <v-app light>
+    <v-navigation-drawer v-model="drawer" absolute temporary>
       <v-list>
-        <v-list-tile
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
+        <v-list-tile v-for="page in pages" :key="page.title" :to="page.to" router exact>
           <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon>{{ page.icon }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title v-text="item.title" />
+            <v-list-tile-title v-text="page.title" />
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar
-      :clipped-left="clipped"
-      fixed
-      app
-    >
-      <v-toolbar-side-icon @click="drawer = !drawer" />
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon>{{ `chevron_${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>web</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>remove</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>menu</v-icon>
-      </v-btn>
+    <v-toolbar class="white">
+      <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-title>Gouher Danish</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn v-for="page in pages" :key="page.title" :to="page.to" flat>{{ page.title }}</v-btn>
+      </v-toolbar-items>
     </v-toolbar>
+
     <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-content>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-tile @click.native="right = !right">
-          <v-list-tile-action>
-            <v-icon light>compare_arrows</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer
-      :fixed="fixed"
-      app
-    >
-      <span>&copy; 2019</span>
+
+    <v-footer height="auto">
+      <v-layout justify-center row wrap>
+        <v-flex primary lighten-0 text-xs-center xs12>
+          <v-btn v-for="social in socials" :key="social" class="mx-3 white--text" color="white--text" icon>
+            <v-icon size="24px">{{ social }}</v-icon>
+          </v-btn>
+        </v-flex>
+        <v-flex primary lighten-0 text-xs-center xs12>
+          <v-btn v-for="page in pages" :key="page.title" :to="page.to" color="white" flat>
+            {{ page.title }}
+          </v-btn>
+        </v-flex>
+        <v-flex primary lighten-1 py-3 text-xs-center white--text xs12>
+          Created &amp; Maintained By <a href="http://nfraz.co.nf" class="white--text" target="_blank">Nazish Fraz</a>
+        </v-flex>
+      </v-layout>
     </v-footer>
   </v-app>
 </template>
@@ -90,26 +49,33 @@
 export default {
   data() {
     return {
-      clipped: false,
       drawer: false,
-      fixed: false,
-      items: [
+      pages: [
         {
-          icon: 'apps',
-          title: 'Welcome',
+          icon: 'home',
+          title: 'About Me',
           to: '/'
         },
         {
-          icon: 'bubble_chart',
-          title: 'Inspire',
-          to: '/inspire'
+          icon: 'work',
+          title: 'Work Experience',
+          to: '/work-experience'
+        },
+        {
+          icon: 'code',
+          title: 'Projects',
+          to: '/projects'
         }
       ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
+      socials: [
+        'fa fa-facebook',
+        'fa fa-twitter',
+        'fa fa-google-plus',
+        'fa fa-linkedin',
+        'fa fa-instagram'
+      ]
     }
-  }
+  },
+  // transitions: "default"
 }
 </script>
