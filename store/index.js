@@ -1,5 +1,6 @@
 import Vuex from 'vuex'
 import axios from 'axios'
+import Config from "~/config.js"
 
 export default () => {
     return new Vuex.Store({
@@ -19,7 +20,7 @@ export default () => {
             },
             ajax_index(state) {
                 state.loader = true
-                axios.get("http://localhost/nazish/personal/danish_portfolio_api_v2/").then((response) => {
+                axios.get(Config.api_url).then((response) => {
                     response = response.data
                     state.data = response.data
                     state.meta = response.meta
@@ -34,7 +35,7 @@ export default () => {
             },
             ajax_work_experience(state) {
                 state.loader = true
-                axios.get("http://localhost/nazish/personal/danish_portfolio_api_v2/work-experience").then((response) => {
+                axios.get(Config.api_url_work_experience).then((response) => {
                     response = response.data
                     state.data = response.data
                     state.meta = response.meta
@@ -49,7 +50,7 @@ export default () => {
             },
             ajax_projects(state) {
                 state.loader = true
-                axios.get("http://localhost/nazish/personal/danish_portfolio_api_v2/projects").then((response) => {
+                axios.get(Config.api_url_projects).then((response) => {
                     response = response.data
                     state.data = response.data
                     state.meta = response.meta
@@ -64,7 +65,7 @@ export default () => {
             },
             ajax_certifications(state) {
                 state.loader = true
-                axios.get("http://localhost/nazish/personal/danish_portfolio_api_v2/certifications").then((response) => {
+                axios.get(Config.api_url_certifications).then((response) => {
                     response = response.data
                     state.data = response.data
                     state.meta = response.meta
