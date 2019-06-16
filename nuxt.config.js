@@ -8,11 +8,12 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: "Gouher Danish",
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: "I love coding and I know how to use coding to solve a real world problem. I love to learn new technologies and strive constantly to improve myself. I like singing and solving rubik's cube in free time." },
+      { hid: 'keywords', name: 'keywords', content: "gouher danish, gouher, danish, gouherdanish.co.nf, gouher danish portfolio, data scientist, portfolio, resume" },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

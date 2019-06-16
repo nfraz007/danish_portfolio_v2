@@ -1,25 +1,25 @@
 <template>
   <v-app>
     <v-container grid-list-sm>
-      <Project class="py-3"/>
+      <Certification class="py-3"/>
     </v-container>
   </v-app>
 </template>
 
 <script>
-import Project from "~/components/Project"
+import Certification from "~/components/Certification"
 
 export default {
-  components: { Project },
+  components: { Certification },
   head: {
-    titleTemplate: "%s | Projects"
+    titleTemplate: "%s | Certifications"
   },
   mounted() {
     this.ajax()
   },
   methods: {
     ajax() {
-      this.$store.commit("ajax_projects")
+      this.$store.commit("ajax_certifications")
     }
   }
 }

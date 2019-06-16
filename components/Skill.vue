@@ -1,28 +1,37 @@
 <template>
-  <v-content>
-    <v-container>
-      <v-layout row wrap class="text-xs-center py-5">
-        <v-flex xs12>
-          <h1 class="primary--text">Skills</h1>
-          <p class="primary--text lighten-1">I believe that in order to improve my skill set, I must indulge myself in learning continuously. Not only does it sharpen my knowledge but it also increases my interest.</p>
-        </v-flex>
-        <v-flex xs12>
-          <v-chip color="primary" text-color="white">Java</v-chip>
-          <v-chip color="primary" text-color="white">Scala</v-chip>
-          <v-chip color="primary" text-color="white">Python</v-chip>
-          <v-chip color="primary" text-color="white">Mysql</v-chip>
-          <v-chip color="primary" text-color="white">Mongo DB</v-chip>
-          <v-chip color="primary" text-color="white">Hive</v-chip>
-          <v-chip color="primary" text-color="white">Extra</v-chip>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-content>
+  	<v-content>
+    	<v-layout row wrap>
+      		<v-flex sm4 xs12>
+          		<Title :section="$store.state.section.SKILL"/>
+      		</v-flex>
+      		<v-flex sm8 xs12>
+				<v-layout row wrap>
+					<v-flex md6 sm12 v-for="skill in $store.state.data.skills" :key="skill.skill_id">
+						<v-card>
+							<v-card-title primary-title>
+								<div>
+									<div class="body-2 text-capitalize">{{ str_fix(skill.skill_type) }}</div>
+									<p>{{ skill.skill }}</p>
+								</div>
+							</v-card-title>
+						</v-card>
+					</v-flex>
+				</v-layout>
+      		</v-flex>
+    	</v-layout>
+  	</v-content>
 </template>
 
 <script>
-export default {
+import Title from "~/components/Title"
 
+export default {
+	components: { Title },
+	methods: {
+		str_fix(str = ""){
+			return str.replace("_", " ")
+		}
+	}
 }
 </script>
 

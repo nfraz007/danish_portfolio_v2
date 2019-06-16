@@ -11,15 +11,15 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/axios": "^5.5.4",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.4.0",
+    "nuxt": "^2.8.1",
     "nuxt-fontawesome": "^0.4.0",
     "vuetify": "^1.5.5",
     "vuetify-loader": "^1.2.1"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.8.2",
+    "@fortawesome/fontawesome-free": "^5.9.0",
     "font-awesome": "^4.7.0",
     "node-sass": "^4.12.0",
     "nodemon": "^1.18.9",

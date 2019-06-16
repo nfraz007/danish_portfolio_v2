@@ -6,7 +6,7 @@ import 'font-awesome/css/font-awesome.min.css'
 Vue.use(Vuetify, {
   theme: {
     primary: '#173e43',
-    accent: '#fae596',
+    accent: '#dab73c',
     secondary: '#3fb0ac',
     info: colors.teal.lighten1,
     warning: colors.amber.base,
