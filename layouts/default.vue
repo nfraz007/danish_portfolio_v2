@@ -26,19 +26,19 @@
     </v-content>
 
     <v-footer height="auto">
-      <v-layout justify-center row wrap white--text>
+      <v-layout row wrap white--text>
         <v-flex xs12 primary>
           <v-container>
             <v-layout row wrap>
               <v-flex md6 sm12>
-                <v-layout justify-start wrap>
+                <v-layout wrap justify-start>
                   <v-btn class="mx-0" color="white" v-for="menu in $store.state.menu" :key="menu.menu_id" :to="menu.menu_url" flat>
                     {{ menu.menu_name }}
                   </v-btn>
                 </v-layout>
               </v-flex>
               <v-flex md6 sm12>
-                <v-layout justify-end>
+                <v-layout wrap justify-end>
                   <v-btn class="mx-3 white--text" color="white--text" v-for="social in $store.state.social" :key="social.social_id" :href="social.social_url" target="_blank" icon ma-0>
                     <v-icon size="24px">{{ social.social_icon }}</v-icon>
                   </v-btn>
