@@ -8,10 +8,10 @@
                 <v-timeline align-top dense>
                     <v-timeline-item color="secondary" small v-for="achievement in $store.state.data.achievements" :key="achievement.achievement_id">
                         <v-layout row wrap pt-2>
-                            <v-flex md2 sm12>
+                            <v-flex md2 sm12 xs12>
                                 <h1 class="primary--text">{{ achievement.achievement_year }}</h1>
                             </v-flex>
-                            <v-flex md10 sm12>
+                            <v-flex md10 sm12 xs12>
                                 <!-- <div class="body-2">{{ achievement.achievement_title }}</div> -->
                                 <div>{{ achievement.achievement_title }}</div>
                             </v-flex>

@@ -8,10 +8,10 @@
                 <v-timeline align-top dense>
                     <v-timeline-item color="secondary" small v-for="award in $store.state.data.awards" :key="award.award_id">
                         <v-layout row wrap pt-2>
-                            <v-flex md2 sm12>
+                            <v-flex md2 sm12 xs12>
                                 <h1 class="primary--text">{{ award.award_year }}</h1>
                             </v-flex>
-                            <v-flex md10 sm12>
+                            <v-flex md10 sm12 xs12>
                                 <div class="body-2">{{ award.award_title }}</div>
                                 <div>{{ award.award_description }}</div>
                             </v-flex>
