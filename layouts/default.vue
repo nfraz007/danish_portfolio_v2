@@ -14,7 +14,7 @@
     </v-navigation-drawer>
     <v-toolbar class="primary">
       <v-toolbar-side-icon class="white--text hidden-md-and-up" @click="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title class="white--text">{{ $store.state.profile.full_name }}</v-toolbar-title>
+      <v-toolbar-title><a href="/" class="white--text">{{ $store.state.profile.full_name }}</a></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn class="white--text" v-for="menu in $store.state.menu" :key="menu.menu_id" :to="menu.menu_url" flat>{{ menu.menu_name }}</v-btn>
