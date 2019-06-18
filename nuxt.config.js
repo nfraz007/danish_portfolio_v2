@@ -12,7 +12,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: "I love coding and I know how to use coding to solve a real world problem. I love to learn new technologies and strive constantly to improve myself. I like singing and solving rubik's cube in free time." },
+      { hid: 'description', name: 'description', content: "I love Maths and I know how to use coding to solve real world problems. I love to learn new technologies and implement it in my projects." },
       { hid: 'keywords', name: 'keywords', content: "gouher danish, gouher, danish, gouherdanish.co.nf, gouher danish portfolio, data scientist, portfolio, resume" },
     ],
     link: [
