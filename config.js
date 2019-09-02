@@ -1,5 +1,5 @@
 const prod = true
-const base_url = (prod) ? "http://nazishfraz.co.nf/danish_portfolio_api_v2/" : "http://localhost/nazish/personal/danish_portfolio_api_v2/"
+const base_url = (prod) ? "http://project.nfraz.co.in/danish_portfolio_api_v2/" : "http://localhost/nazish/personal/danish_portfolio_api_v2/"
 
 export default {
     api_url: base_url,
