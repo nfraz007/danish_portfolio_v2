@@ -51,7 +51,7 @@
           <v-container>
             <v-layout row>
               <v-flex xs12>
-                Created &amp; Maintained By <a href="http://nfraz.co.nf" class="white--text" target="_blank">Nazish Fraz</a>
+                Created &amp; Maintained By <a href="http://nfraz.co.in" class="white--text" target="_blank">Nazish Fraz</a>
               </v-flex>
             </v-layout>
           </v-container>
